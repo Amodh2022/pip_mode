@@ -59,29 +59,10 @@ public class MainActivity extends FlutterActivity {
             super.onPictureInPictureModeChanged(isInPictureInPictureMode,newConfig);
         }
 
-        if(isInPictureInPictureMode){
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                PictureInPictureParams.Builder pipBuilder = new PictureInPictureParams.Builder();
-                List<RemoteAction> actions = new ArrayList<>();
-
-                actions.add(
-                        new RemoteAction(
-                                Icon.createWithResource(MainActivity.this, R.drawable.ic_info_24dp),
-                                getString(R.string.info),
-                                getString(R.string.info_description),
-                                PendingIntent.getActivity(
-                                        MainActivity.this,
-                                        REQUEST_INFO,
-                                        new Intent(
-                                                Intent.ACTION_VIEW,
-                                                Uri.parse(getString(R.string.info_uri))),
-                                        PendingIntent.FLAG_IMMUTABLE)));
-
-            }
 
         }
     }
 
 
 
-}
+
